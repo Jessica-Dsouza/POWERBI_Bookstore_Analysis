@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+    <head>
+        <title>Power BI Error</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge;" />
+
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="shortcut icon" href="/images/PowerBI_Favicon.ico" />
+        
+        
+    <script>
+
+
+    var powerBIAccessToken = '';
+    var powerBIAccessTokenExpiry = '';
+    var baseUrl = window.location.protocol + "//" + window.location.host;
+    var powerbi = {
+        session : {
+            userInfo: {
+                name:  '',
+                givenName: '',
+                surname: '',
+                puid: '',
+                uoid: '',
+                alternateEmail: '',
+                hasAutoAssignedLicense: false
+            }
+        }
+    };
+    powerbi.telemetrySamplingRules = { appInsights: [{ purpose: "CriticalError", sampleRate: 1 },{ purpose: "CustomerAction", sampleRate: 1 },{ purpose: "Verbose", sampleRate: 1 }], perf: [{ purpose: "CriticalError", sampleRate: 1 },{ purpose: "CustomerAction", sampleRate: 1 },{ purpose: "Verbose", sampleRate: 1 }] };
+
+    powerbi.build = '13.0.20534.68';
+    powerbi.buildDetails = '13.0.20534.68';
+    powerbi.clientVersion = '2304.3.13454-train';
+    powerbi.common = {};
+    powerbi.common.cultureInfo = 'en-GB';
+    powerbi.common.unmappedCultureInfo = 'en-GB';
+    powerbi.common.formattingLocale = 'en-GB';
+    powerbi.common.isCurrentContextRtl = 'False';
+    powerbi.visualCDNBlobContainerUrl = 'prod';
+    powerbi.cvUrl = 'https://pbivisuals.powerbi.com';
+    var emUseCDN = false;
+    var externalMigration = false;
+    var useCDN = 'True';
+    var clusterUri =  'https://api.powerbi.com';
+    var cdnUrl = 'https://content.powerapps.com/resource/powerbiwfe';
+    var apiUri =  'https://api.powerbi.com';
+    var tenantId = '';
+    var previousTenantId =  '';
+    var allowTelemetry = true;
+    var appInsightsV2InstrKey = 'e43fee4d-90d5-4c2a-a681-cffdd604ad5c';
+    var appInsightsV2EndpointUrl = '';
+    var triShellAppInsightsV2ConnectionInfo = 'InstrumentationKey=433d8c1b-e63d-4935-8917-fbb39ecb7b51;IngestionEndpoint=https://eastus-8.in.applicationinsights.azure.com/';
+    var telemetrySessionId =  'd9e68591-d754-4300-826a-b201bea0c565';
+    var optimizedAppMetadataForAppLandingEnabledForBootstrap = 'true';
+    var requestWV2First = false;
+    var powerBIGoalsEnabledForBootstrap = false;
+    var powerBISpinnerImprovements = true;
+    var embeddedWebContentIframeSource = 'https://app.pbiwebcontent.com/webcontentsandbox.html';
+    var supportedSaasMarketplaceRedirects = 'https://local.spza.microsoft-int.com;https://appsource.microsoft.com;https://appgallery.spza-staging.net;https://appgallery.spza-internal.net';
+    var saasMarketplaceUrlOrigin = 'https://appsource.microsoft.com';
+    var npsUrlOrigin = 'https://nps.onyx.azure.net';
+    var npsNewUrlOrigin = 'https://world.ces.microsoftcloud.com';
+    var feUrl = 'https://app.powerbi.com';
+    var extensionUrls = {'rfx': 'https://pbirfx.powerbi.com', 'dfw': 'https://pbidfw.powerbi.com', 'dpe': 'https://pbidpe.powerbi.com', 'lhe': 'https://pbilhe.powerbi.com', 'des': 'https://pbides.powerbi.com', 'spc': 'https://pbispc.powerbi.com', 'adx': 'https://pbiadx.powerbi.com', 'stm': 'https://pbistm.powerbi.com'};
+    var environmentName = 'PROD';
+    var arcAPIUrl = 'https://arc.msn.com/v4/api/selection?placement=88000350';
+    var arcResourceUri = 'https://arc.msn.com/v4';
+    var downloadAndroidAppFWlink = 'https://go.microsoft.com/fwlink/?LinkId=544867';
+    var downloadPageFWlink = 'https://go.microsoft.com/fwlink/?linkid=526501';
+    var powerBIOperator = '';
+    var powerBIOperatorLocale = '';
+    var o365AdminPurchaseCapacityPageUrl = 'https://portal.office.com/adminportal/home#/catalog';
+    var o365PortalUrl = 'https://portal.office.com';
+    var disableSignin = false;
+    var xmlaEndpointApiDNSName = 'api.powerbi.com';
+    var premCapacityMetricsAppAdminUrl = 'https://go.microsoft.com/fwlink/?linkid=2114036';
+    var microsoftGraphUrl = 'https://graph.microsoft.com';
+    var getAppInsightsConnectionString = true;
+    var playgroundUrl = 'https://playground.powerbi.com/';
+    var reflexAud = 'https://prod.reflex.ms/.default';
+    var reflexUrl = 'https://neu.rmm.api.prd.trafficmanager.net/api/v1';
+    var adminCenterSupportPageUrl = 'https://aka.ms/contact-support';
+    var wfeClusterName = 'app-PBI-WFE-CANADA-CENTRAL';
+    var supportPageUrl = 'https://support.powerbi.com';
+    var documentationUrl = 'https://go.microsoft.com/fwlink/?linkid=2125441';
+    </script>
+        
+    <link rel="stylesheet" href="https://content.powerapps.com/resource/powerbiwfe/styles/styleLibrary.min.29a6b20ab810f6a8eb54.css" onerror=cdnFallback(event) />
+<link rel="stylesheet" href="https://content.powerapps.com/resource/powerbiwfe/styles/powerbi.common.externals.min.45febe62502627ae464d.css" onerror=cdnFallback(event) />
+<link rel="stylesheet" href="https://content.powerapps.com/resource/powerbiwfe/styles/powerbi.web.externals.min.3ff78e9b733c085e20a3.css" onerror=cdnFallback(event) />
+<link rel="stylesheet" href="https://content.powerapps.com/resource/powerbiwfe/styles/InfoNav.Common.min.bec0e34ddf1c684ae282.css" onerror=cdnFallback(event) />
+<link rel="stylesheet" href="https://content.powerapps.com/resource/powerbiwfe/styles/powerBICommon.min.54e87516c53ac3c9ff1b.css" onerror=cdnFallback(event) />
+<link rel="stylesheet" href="https://content.powerapps.com/resource/powerbiwfe/styles/powerBIProvidersCommon.min.000a70741198babfab37.css" onerror=cdnFallback(event) />
+
+    <link rel="stylesheet" href="https://content.powerapps.com/resource/powerbiwfe/styles/powerbi.min.7a6b6fbf8b02cda6bb53.css" onerror=cdnFallback(event) />
+<link rel="stylesheet" href="https://content.powerapps.com/resource/powerbiwfe/styles/explorationContainer.min.79ce44c4e03e44dafc6d.css" onerror=cdnFallback(event) />
+<link rel="stylesheet" href="https://content.powerapps.com/resource/powerbiwfe/styles/visuals.min.6d8b10ce72e40cdf505f.css" onerror=cdnFallback(event) />
+<link rel="stylesheet" href="https://content.powerapps.com/resource/powerbiwfe/styles/powerBIProvidersCommon.min.000a70741198babfab37.css" onerror=cdnFallback(event) />
+
+
+    </head>
+    <body>
+    
+
+
+
+
+<div class="landingController">
+    <div id="topBar">
+        <div class="topNavLeft">
+            <a class="powerBILogoText" href="/">Power BI</a>
+        </div>
+        <!-- //TODO Need to bring back the smiley button -->
+    </div>
+    <div class="contentMain error">
+        <div class="owlContainer">
+            <div class="contentErrorImage">
+                <img src="13.0.20534.68/images/errors/owl_searching.png" />
+            </div>
+                <div class="contentErrorText">We couldn't find the page you were looking for.</div>
+                <div class="contentErrorDescription">TECHNICAL DETAILS <br/>An unknown error occurred. If you continue to see this error, please provide the following information when requesting support.</div>
+                <div class="contentErrorItemText">Date and Time: 2023-04-20 23:11:06Z</div>
+                <div class="contentErrorItemText">Activity Id: d9e68591-d754-4300-826a-b201bea0c565</div>
+                <div class="contentErrorItemText"></div>
+                <div class="continueLink">
+                    <a class="continueLinkText" target="_blank" href=/>Go back home</a>
+                </div>
+        </div>
+    </div>
+</div>
+
+    
+    <script type="text/javascript">this.parseTimeMarkers = this.parseTimeMarkers || {}; this.parseTimeMarkers['polyfills.min.js'] = { nominalStart: Date.now(), start: Date.now(), initial: true }; </script>
+<script type="text/javascript" src="https://content.powerapps.com/resource/powerbiwfe/scripts/polyfills.min.26604c5d55e9fe034a32.js"  onerror=cdnFallback(event) ></script>
+<script type="text/javascript">this.parseTimeMarkers['polyfills.min.js'].end = Date.now();</script>
+
+    <script type="text/javascript">this.parseTimeMarkers = this.parseTimeMarkers || {}; this.parseTimeMarkers['lodash.bundle.min.js'] = { nominalStart: Date.now(), start: Date.now(), initial: true }; </script>
+<script type="text/javascript" src="https://content.powerapps.com/resource/powerbiwfe/scripts/lodash.bundle.min.7e779a5eb506967769ba.js"  onerror=cdnFallback(event) ></script>
+<script type="text/javascript">this.parseTimeMarkers['lodash.bundle.min.js'].end = Date.now();</script>
+
+        <script>
+        // Implement enqueueCommand inline and defer localytics loading so page load is not blocked
+        LocalyticsGlobal = 'localytics';
+        localytics = { enqueueCommand: function () { this.q.push(arguments); }, t: Number(new Date), q: [] };
+    </script>
+<script> function cdnFallback(event) {var date = new Date(); var failedRequestUrl = 'unknown'; var maxAgeInSeconds = 8 * 60 * 60;if (event && event.currentTarget && event.currentTarget.src) {failedRequestUrl = event.currentTarget.src;}document.cookie = 'disablecdn=cdnRequestFailureTimestamp:' + date.toUTCString() + '-cdnRequestFailureUrl:' + failedRequestUrl + '; max-age=' + maxAgeInSeconds + '; secure';window.location.reload(true); }</script>
+<script type="text/javascript">this.parseTimeMarkers = this.parseTimeMarkers || {}; this.parseTimeMarkers['hash-manifest.js'] = { nominalStart: Date.now(), start: Date.now(), initial: true }; </script>
+<script type="text/javascript" src="13.0.20534.68/scripts/hash-manifest.js"  onerror=cdnFallback(event) ></script>
+<script type="text/javascript">this.parseTimeMarkers['hash-manifest.js'].end = Date.now();</script>
+<script type="text/javascript">this.parseTimeMarkers = this.parseTimeMarkers || {}; this.parseTimeMarkers['jquery.globalize/globalize.min.js'] = { nominalStart: Date.now(), start: Date.now(), initial: true }; </script>
+<script type="text/javascript" src="https://content.powerapps.com/resource/powerbiwfe/scripts/jquery.globalize/globalize.min.8e8ec43af69cf3d5d7aa.js" defer   onerror=cdnFallback(event) ></script>
+<script type="text/javascript">this.parseTimeMarkers['jquery.globalize/globalize.min.js'].end = Date.now();</script>
+<script type="text/javascript">this.parseTimeMarkers = this.parseTimeMarkers || {}; this.parseTimeMarkers['jquery.globalize/globalize.culture.en-GB.js'] = { nominalStart: Date.now(), start: Date.now(), initial: true }; </script>
+<script type="text/javascript" src="https://content.powerapps.com/resource/powerbiwfe/scripts/jquery.globalize/globalize.culture.en-GB.9b595ef4139eecef9d9c.js" defer   onerror=cdnFallback(event) ></script>
+<script type="text/javascript">this.parseTimeMarkers['jquery.globalize/globalize.culture.en-GB.js'].end = Date.now();</script>
+<script type="text/javascript">this.parseTimeMarkers = this.parseTimeMarkers || {}; this.parseTimeMarkers['jQuery.min.js'] = { nominalStart: Date.now(), start: Date.now(), initial: true }; </script>
+<script type="text/javascript" src="https://content.powerapps.com/resource/powerbiwfe/scripts/jQuery.min.c8e1c8b386dc5b7a9184.js"  onerror=cdnFallback(event) ></script>
+<script type="text/javascript">this.parseTimeMarkers['jQuery.min.js'].end = Date.now();</script>
+<script type="text/javascript">this.parseTimeMarkers = this.parseTimeMarkers || {}; this.parseTimeMarkers['jquery-ui.min.js'] = { nominalStart: Date.now(), start: Date.now(), initial: true }; </script>
+<script type="text/javascript" src="https://content.powerapps.com/resource/powerbiwfe/scripts/jquery-ui.min.54471b21b524931a54a1.js"  onerror=cdnFallback(event) ></script>
+<script type="text/javascript">this.parseTimeMarkers['jquery-ui.min.js'].end = Date.now();</script>
+<script type="text/javascript">this.parseTimeMarkers = this.parseTimeMarkers || {}; this.parseTimeMarkers['require.min.js'] = { nominalStart: Date.now(), start: Date.now(), initial: true }; </script>
+<script type="text/javascript" src="https://content.powerapps.com/resource/powerbiwfe/scripts/require.min.c1195d49355cee73bd97.js"  onerror=cdnFallback(event) ></script>
+<script type="text/javascript">this.parseTimeMarkers['require.min.js'].end = Date.now();</script>
+<script type="text/javascript">this.parseTimeMarkers = this.parseTimeMarkers || {}; this.parseTimeMarkers['visuals.min.js'] = { nominalStart: Date.now(), start: Date.now(), initial: true }; </script>
+<script type="text/javascript" src="https://content.powerapps.com/resource/powerbiwfe/scripts/visuals.min.31734ae9dffd2d3f2168.js"  onerror=cdnFallback(event) ></script>
+<script type="text/javascript">this.parseTimeMarkers['visuals.min.js'].end = Date.now();</script>
+<script type="text/javascript">this.parseTimeMarkers = this.parseTimeMarkers || {}; this.parseTimeMarkers['utility.min.js'] = { nominalStart: Date.now(), start: Date.now(), initial: true }; </script>
+<script type="text/javascript" src="https://content.powerapps.com/resource/powerbiwfe/scripts/utility.min.b2a41e4269750f86efd0.js"  onerror=cdnFallback(event) ></script>
+<script type="text/javascript">this.parseTimeMarkers['utility.min.js'].end = Date.now();</script>
+    <script>
+
+        powerbi.common.localizedStrings = '';
+    </script>
+<script type="text/javascript">this.parseTimeMarkers = this.parseTimeMarkers || {}; this.parseTimeMarkers['powerBIResources.min.js'] = { nominalStart: Date.now(), start: Date.now(), initial: true }; </script>
+<script type="text/javascript" src="https://content.powerapps.com/resource/powerbiwfe/scripts/powerBIResources.min.16b80846814bbe2c341e.js"  onerror=cdnFallback(event) ></script>
+<script type="text/javascript">this.parseTimeMarkers['powerBIResources.min.js'].end = Date.now();</script>
+
+    <script type="text/javascript">this.parseTimeMarkers = this.parseTimeMarkers || {}; this.parseTimeMarkers['telemetry.bundle.min.js'] = { nominalStart: Date.now(), start: Date.now(), initial: true }; </script>
+<script type="text/javascript" src="https://content.powerapps.com/resource/powerbiwfe/scripts/telemetry.bundle.min.39c8644b82dfed6423ac.js"  onerror=cdnFallback(event) ></script>
+<script type="text/javascript">this.parseTimeMarkers['telemetry.bundle.min.js'].end = Date.now();</script>
+
+
+<script>
+        // todo: logic in cshtml files that needs compile time checks should be moved into TS files and included in here (similar to how bootstrap.ts is handled)
+        var errorCode = '404';
+        var errorType = '';
+        var requestId = '';
+        var errorInfo = '';
+        var tenantIdFromRequest = '';
+        var userPuidFromRequest = '';
+        var initialRequestStatusCode = '';
+        var errorArray =  '';
+        var errorArrayObject = errorArray ? JSON.parse(errorArray) : null;
+
+        // If tenant and user metadata are not present on window already, set them from pre-redirect page context.
+        if (!window.tenantId && tenantIdFromRequest) {
+            window.tenantId = tenantIdFromRequest;
+        }
+
+        if (!window.powerbi?.session?.userInfo?.puid && userPuidFromRequest) {
+            if (window.powerbi?.session?.userInfo) {
+                window.powerbi.session.userInfo.puid = userPuidFromRequest;
+            }
+        }
+
+        var telemetryService = powerbi.createTelemetryService(powerbi.createTelemetryOptions(), powerbi.createTelemetryHostService(), powerbi.createUserActivityContextService());
+        
+            
+                telemetryService.logEvent(powerbi.telemetry.WFEError, { errorCode1: errorCode, errorType, requestId, errorInfo, initialRequestStatusCode});
+            
+        
+</script>
+
+    </body>
+</html>
